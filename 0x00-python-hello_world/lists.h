@@ -5,21 +5,21 @@
 
 /**
  * struct listint_s - singly linked list
- * @k: an integer
- * @upcoming: points to the next node
+ * @n: integer
+ * @next: points to the next node
  *
- * Description: singly linked list node structure in the func
+ * Description: singly linked list node structure
  * 
  */
 typedef struct listint_s
 {
-	int k;
-	struct listint_s *upcomimg;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
-size_t printlist_int(const listint_t *k);
-listint_t *add_nodeint(listint_t **head, const int k);
-void freelist_int(listint_t *head);
-int checks_cycle(listint_t *list);
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+void free_listint(listint_t *head);
+int check_cycle(listint_t *list);
 
 #endif /* LISTS_H */
