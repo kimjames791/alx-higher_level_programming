@@ -2,22 +2,22 @@
 #include <stdio.h>
 
 /**
-  * checks_cycle - Checks if a singly linked list has a cycle in it
+  * check_cycle - Checks if a singly linked list has a cycle in it
   * @list: The singly linked list to check
   *
-  * Return: 1 if has a cycle in it or 0 if no cycle found
+  * Return: 1 if has a cycle in it or 0 if not
   */
-int checks_cycle(listint_t *list)
+int check_cycle(listint_t *list)
 {
 	listint_t *turtle = list, *hare = list;
 	int found = 0;
 
-	while ((turtle && hare) && hare->upcoming)
+	while ((turtle && hare) && hare->next)
 	{
-		turtle = turtle->upcoming;
+		turtle = turtle->next;
 
-		if (hare->upcoming || hare->upcoming->upcoming)
-			hare = hare->upcoming->upcoming;
+		if (hare->next || hare->next->next)
+			hare = hare->next->next;
 		else
 			break;
 
